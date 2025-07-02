@@ -2,7 +2,7 @@
 cask "docker-pussh" do
   desc "Upload Docker images to remote servers via SSH without an external registry."
   homepage "https://github.com/psviderski/unregistry"
-  version "0.0.12"
+  version "0.0.13"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,23 @@ cask "docker-pussh" do
 
   on_macos do
     on_intel do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.12/unregistry_0.0.12_darwin_amd64.tar.gz"
-      sha256 "1bf3265b0b7f2b105b968946e29db154a9a6093ad3f1fd6f26df5b271205373a"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.13/unregistry_0.0.13_darwin_amd64.tar.gz"
+      sha256 "c4f33005493a102a451a205861fdf7e4826969a3276bbd870afc68d6a02f2abd"
     end
     on_arm do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.12/unregistry_0.0.12_darwin_arm64.tar.gz"
-      sha256 "1bf3265b0b7f2b105b968946e29db154a9a6093ad3f1fd6f26df5b271205373a"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.13/unregistry_0.0.13_darwin_arm64.tar.gz"
+      sha256 "c4f33005493a102a451a205861fdf7e4826969a3276bbd870afc68d6a02f2abd"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.12/unregistry_0.0.12_linux_amd64.tar.gz"
-      sha256 "1bf3265b0b7f2b105b968946e29db154a9a6093ad3f1fd6f26df5b271205373a"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.13/unregistry_0.0.13_linux_amd64.tar.gz"
+      sha256 "c4f33005493a102a451a205861fdf7e4826969a3276bbd870afc68d6a02f2abd"
     end
     on_arm do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.12/unregistry_0.0.12_linux_arm64.tar.gz"
-      sha256 "1bf3265b0b7f2b105b968946e29db154a9a6093ad3f1fd6f26df5b271205373a"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.13/unregistry_0.0.13_linux_arm64.tar.gz"
+      sha256 "c4f33005493a102a451a205861fdf7e4826969a3276bbd870afc68d6a02f2abd"
     end
   end
 
@@ -45,6 +45,11 @@ cask "docker-pussh" do
       To uninstall the plugin:
         rm ~/.docker/cli-plugins/docker-pussh
     EOS
+  end
+
+  test do
+    # Test the command output with no arguments.
+    assert_match "IMAGE and HOST are required", shell_output("#{bin}/docker-pussh 2>&1", 1)
   end
 
   # No zap stanza required
