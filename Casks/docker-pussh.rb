@@ -2,33 +2,33 @@
 cask "docker-pussh" do
   desc "Upload Docker images to remote servers via SSH without an external registry."
   homepage "https://github.com/psviderski/unregistry"
-  version "0.0.9"
+  version "0.0.10"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
-  binary "./docker-pussh"
+  binary "docker-pussh"
 
   on_macos do
     on_intel do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.9/unregistry_0.0.9_darwin_amd64.tar.gz"
-      sha256 "784f8f51dab7e1c865b97f2c744cce0b55a09a367f64425294b16bc34a0c29bd"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.10/unregistry_0.0.10_darwin_amd64.tar.gz"
+      sha256 "abf672dca4d18cafd2dc31f0cc1fdac4b00b6ba97a21ea395021b634be84d57b"
     end
     on_arm do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.9/unregistry_0.0.9_darwin_arm64.tar.gz"
-      sha256 "20c94df3f1da11cda2d0bea0bd7b474008cf2d4fa9573b74584356e1801493ff"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.10/unregistry_0.0.10_darwin_arm64.tar.gz"
+      sha256 "edf56703d8dce0757e9a2c3ae736c44b8663fa26e1ac685a381e56c616703f8c"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.9/unregistry_0.0.9_linux_amd64.tar.gz"
-      sha256 "43e95a667f9183585bfe1112a72b87153cc1ac62ce67657d21d355552b58cb88"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.10/unregistry_0.0.10_linux_amd64.tar.gz"
+      sha256 "58885fb08b7b467ddb109916ddd37bdbf9ee37642c9ec8f3f4717e46dc490ee8"
     end
     on_arm do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.9/unregistry_0.0.9_linux_arm64.tar.gz"
-      sha256 "62db0631685cb394f3ae32bc8fbf27730df8856f95b27fafba524b3e18f5d9ac"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.10/unregistry_0.0.10_linux_arm64.tar.gz"
+      sha256 "42583bcf2588ea3532ad3ab94fe9de95028e85684786f16a596de6465b0ba157"
     end
   end
 
