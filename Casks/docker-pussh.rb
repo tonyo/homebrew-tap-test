@@ -2,7 +2,7 @@
 cask "docker-pussh" do
   desc "Upload Docker images to remote servers via SSH without an external registry."
   homepage "https://github.com/psviderski/unregistry"
-  version "0.0.11"
+  version "0.0.12"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,24 +12,39 @@ cask "docker-pussh" do
 
   on_macos do
     on_intel do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.11/unregistry_0.0.11_darwin_amd64.tar.gz"
-      sha256 "3da3f3e019d55cab2b5879d7fe3f400a5c1347e54d6d9911fcd133a9c38b2b11"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.12/unregistry_0.0.12_darwin_amd64.tar.gz"
+      sha256 "1bf3265b0b7f2b105b968946e29db154a9a6093ad3f1fd6f26df5b271205373a"
     end
     on_arm do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.11/unregistry_0.0.11_darwin_arm64.tar.gz"
-      sha256 "3da3f3e019d55cab2b5879d7fe3f400a5c1347e54d6d9911fcd133a9c38b2b11"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.12/unregistry_0.0.12_darwin_arm64.tar.gz"
+      sha256 "1bf3265b0b7f2b105b968946e29db154a9a6093ad3f1fd6f26df5b271205373a"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.11/unregistry_0.0.11_linux_amd64.tar.gz"
-      sha256 "3da3f3e019d55cab2b5879d7fe3f400a5c1347e54d6d9911fcd133a9c38b2b11"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.12/unregistry_0.0.12_linux_amd64.tar.gz"
+      sha256 "1bf3265b0b7f2b105b968946e29db154a9a6093ad3f1fd6f26df5b271205373a"
     end
     on_arm do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.11/unregistry_0.0.11_linux_arm64.tar.gz"
-      sha256 "3da3f3e019d55cab2b5879d7fe3f400a5c1347e54d6d9911fcd133a9c38b2b11"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.12/unregistry_0.0.12_linux_arm64.tar.gz"
+      sha256 "1bf3265b0b7f2b105b968946e29db154a9a6093ad3f1fd6f26df5b271205373a"
     end
+  end
+
+  def caveats
+    <<~EOS
+      To use docker-pussh as a Docker CLI plugin ('docker pussh' command) you need to create a symlink:
+
+        mkdir -p ~/.docker/cli-plugins
+        ln -sf #{opt_bin}/docker-pussh ~/.docker/cli-plugins/docker-pussh
+
+      After installation, you can use it with:
+        docker pussh [OPTIONS] IMAGE[:TAG] [USER@]HOST[:PORT]
+
+      To uninstall the plugin:
+        rm ~/.docker/cli-plugins/docker-pussh
+    EOS
   end
 
   # No zap stanza required
