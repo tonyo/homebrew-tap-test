@@ -2,7 +2,7 @@
 cask "docker-pussh" do
   desc "Upload Docker images to remote servers via SSH without an external registry."
   homepage "https://github.com/psviderski/unregistry"
-  version "0.0.13"
+  version "0.0.14"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,23 @@ cask "docker-pussh" do
 
   on_macos do
     on_intel do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.13/unregistry_0.0.13_darwin_amd64.tar.gz"
-      sha256 "c4f33005493a102a451a205861fdf7e4826969a3276bbd870afc68d6a02f2abd"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.14/unregistry_0.0.14_darwin_amd64.tar.gz"
+      sha256 "df442c790673d8bd2f1ac16a11c6544716bb61bf2c1d5ce8bd6d978c6fa6d344"
     end
     on_arm do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.13/unregistry_0.0.13_darwin_arm64.tar.gz"
-      sha256 "c4f33005493a102a451a205861fdf7e4826969a3276bbd870afc68d6a02f2abd"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.14/unregistry_0.0.14_darwin_arm64.tar.gz"
+      sha256 "df442c790673d8bd2f1ac16a11c6544716bb61bf2c1d5ce8bd6d978c6fa6d344"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.13/unregistry_0.0.13_linux_amd64.tar.gz"
-      sha256 "c4f33005493a102a451a205861fdf7e4826969a3276bbd870afc68d6a02f2abd"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.14/unregistry_0.0.14_linux_amd64.tar.gz"
+      sha256 "df442c790673d8bd2f1ac16a11c6544716bb61bf2c1d5ce8bd6d978c6fa6d344"
     end
     on_arm do
-      url "https://github.com/tonyo/unregistry/releases/download/v0.0.13/unregistry_0.0.13_linux_arm64.tar.gz"
-      sha256 "c4f33005493a102a451a205861fdf7e4826969a3276bbd870afc68d6a02f2abd"
+      url "https://github.com/tonyo/unregistry/releases/download/v0.0.14/unregistry_0.0.14_linux_arm64.tar.gz"
+      sha256 "df442c790673d8bd2f1ac16a11c6544716bb61bf2c1d5ce8bd6d978c6fa6d344"
     end
   end
 
@@ -37,7 +37,7 @@ cask "docker-pussh" do
       To use docker-pussh as a Docker CLI plugin ('docker pussh' command) you need to create a symlink:
 
         mkdir -p ~/.docker/cli-plugins
-        ln -sf #{opt_bin}/docker-pussh ~/.docker/cli-plugins/docker-pussh
+        ln -sf #{HOMEBREW_PREFIX}/bin/docker-pussh ~/.docker/cli-plugins/docker-pussh
 
       After installation, you can use it with:
         docker pussh [OPTIONS] IMAGE[:TAG] [USER@]HOST[:PORT]
